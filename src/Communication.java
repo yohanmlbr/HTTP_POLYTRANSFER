@@ -195,7 +195,7 @@ public class Communication implements Runnable {
         }
 
         byte[] bytes = baos.toByteArray();
-        try (FileOutputStream fos = new FileOutputStream("D:\\Desktop\\Web" + nomFich)) {
+        try (FileOutputStream fos = new FileOutputStream(Server.getFolder() + nomFich)) {
             fos.write(bytes);
             //System.out.println(bytes.length);
             //fos.close(); There is no more need for this line since you had created the instance of "fos" inside the try. And this will automatically close the OutputStream

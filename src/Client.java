@@ -145,7 +145,7 @@ public class Client {
         }
 
         byte[] bytes = baos.toByteArray();
-        try (FileOutputStream fos = new FileOutputStream("D:\\Desktop\\Client\\" + nomFich)) {
+        try (FileOutputStream fos = new FileOutputStream(folder + nomFich)) {
             fos.write(bytes);
             System.out.println(bytes.length);
             //fos.close(); There is no more need for this line since you had created the instance of "fos" inside the try. And this will automatically close the OutputStream
@@ -162,8 +162,8 @@ public class Client {
 
         Client clientHTTP = new Client("localhost", 8080);
 
-        //clientHTTP.putFile(folder,fileput,"localhost");
-        clientHTTP.getFile(fileget, "TEST");
+        clientHTTP.putFile(folder,fileput,"localhost");
+        //clientHTTP.getFile(fileget, "TEST");
     }
 
 }
